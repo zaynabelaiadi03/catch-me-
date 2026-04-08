@@ -14,8 +14,8 @@ CopSize = (200, 200)
 
 Guy = transform.scale(image.load('Guy.png'), GuySize)
 Cop = transform.scale( image.load('Cop.png') , CopSize )
-obs  = transform.scale(image.load('obs.png'), (300, 100))
-
+obs  = transform.scale(image.load('obs.png'), (80, 80))
+obs2 = transform.scale(image.load('obs2.png'), (80, 80))
 
 
 # Player properties
@@ -26,8 +26,13 @@ GuySpeed = 5
 
 CopPosx = 100
 CopPosy = 100
+Copspeed = 3
+obsPosx = 100
+obsPosy = 100
 obsspeed = 3
-
+obs2Posx = 100
+obs2Posy = 100
+obsspeed = 3
 
 
 
