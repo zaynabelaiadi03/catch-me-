@@ -14,32 +14,33 @@ CopSize = (200, 200)
 
 Guy = transform.scale(image.load('Guy.png'), GuySize)
 Cop = transform.scale( image.load('Cop.png') , CopSize )
-obs  = transform.scale(image.load('obs.png'), (80, 80))
-obs2 = transform.scale(image.load('obs2.png'), (80, 80))
-
+obs = transform.scale(image.load('obs.png'),(70, 70))
+obs2 = transform.scale(image.load('obs2.png'),(70,70))
 
 # Player properties
 GuyPosx = SCREEN_WIDTH // 2 
 GuyPosy = SCREEN_HEIGHT // 2 
-GuySpeed = 5
+GuySpeed = 1
 
 
 CopPosx = 100
 CopPosy = 100
-Copspeed = 3
-obsPosx = 100
-obsPosy = 100
-obsspeed = 3
-obs2Posx = 100
-obs2Posy = 100
-obsspeed = 3
+CopSpeed = 1
+obsPosx = 200
+obsPosy = 200
+obsSpeed = 3
+obs2Posx = 400
+obs2Posy = 400
+obs2Speed = 3
+obs3Posx =700
+obs3Posy = 700
+obs3Speed = 3
+
+
 
 
 
 game = True
-
-
-
 
 
 
@@ -60,11 +61,21 @@ while game:
     if keys[K_DOWN] and GuyPosy < SCREEN_HEIGHT - GuySize[1]:
         GuyPosy += GuySpeed
         
+    obsPosx += obsSpeed
+    if obsPosx <= 0 or obsPosx >= SCREEN_WIDTH - 150:
+        obsSpeed *= -1
+    obs2Posy += obs2Speed
+    if obs2Posy <= 0 or obs2Posy >= SCREEN_HEIGHT - 150:
+        obs2Speed *= -1
+    obs3Posy += obs3Speed
+    if obs3Posy <= 0 or obs3Posy >= SCREEN_HEIGHT - 150:
+        obs3Speed *= -1
 
     window.blit(background, (0, 0))
     window.blit(Guy, (GuyPosx, GuyPosy))
     window.blit(Cop, (CopPosx, CopPosy))
-    window.blit(obs, (200, 200))  
-
+    window.blit(obs, (obsPosx, obsPosy))
+    window.blit(obs2, (obs2Posx, obs2Posy))
+    # add the obstacles
     display.update()
 
